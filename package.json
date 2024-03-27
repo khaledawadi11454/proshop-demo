@@ -1,0 +1,37 @@
+{
+  "name": "proshop-v2",
+  "version": "2.0.0",
+  "description": "Ecommerce application  build with the  Mern Stack ",
+  "main": "server.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.mjs",
+    "server": "nodemon backend/server.mjs",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\" && sleep 5 && lsof -ti:3000 | xargs kill && google-chrome http://localhost:3000",
+    "data:import": "node backend/seeder.js",
+    "data:destroy": "node backend/seeder.js -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khaledawadi11454/proshop-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khaledawadi11454/proshop-demo/issues"
+  },
+  "homepage": "https://github.com/khaledawadi11454/proshop-demo#readme",
+  "dependencies": {
+    "async-handler": "^0.0.3",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "express": "^4.19.1",
+    "mongoose": "^8.2.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.0"
+  }
+}
